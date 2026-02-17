@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
-import { FinanceProvider } from './context/FinanceContext';
-import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import Transactions from './pages/Transactions';
-import Budgets from './pages/Budgets';
-import Goals from './pages/Goals';
-import Premium from './pages/Premium';
-import { Page } from './types';
+import { FinanceProvider } from './context/FinanceContext.tsx';
+import Layout from './components/Layout.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import Transactions from './pages/Transactions.tsx';
+import Budgets from './pages/Budgets.tsx';
+import Goals from './pages/Goals.tsx';
+import Premium from './pages/Premium.tsx';
+import { Page } from './types.ts';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard');

@@ -1,7 +1,7 @@
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Transaction, Budget, FinancialGoal, TransactionType, Badge } from '../types';
-import { INITIAL_TRANSACTIONS } from '../constants';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { Transaction, Budget, FinancialGoal, TransactionType, Badge } from '../types.ts';
+import { INITIAL_TRANSACTIONS } from '../constants.tsx';
 
 interface FinanceContextType {
   transactions: Transaction[];
@@ -21,14 +21,14 @@ const FinanceContext = createContext<FinanceContextType | undefined>(undefined);
 export const FinanceProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [transactions, setTransactions] = useState<Transaction[]>(INITIAL_TRANSACTIONS);
   const [isPremium, setIsPremium] = useState(false);
-  const [budgets, setBudgets] = useState<Budget[]>([
+  const [budgets] = useState<Budget[]>([
     { categoryId: 'cat_food', limit: 800 },
     { categoryId: 'cat_leisure', limit: 300 }
   ]);
   const [goals, setGoals] = useState<FinancialGoal[]>([
     { id: '1', title: 'Viagem Japão', targetAmount: 15000, currentAmount: 2500, deadline: '2025-12-01' }
   ]);
-  const [badges, setBadges] = useState<Badge[]>([
+  const [badges] = useState<Badge[]>([
     { id: 'b1', name: 'Primeiros Passos', icon: '🌱', description: 'Registrou sua primeira transação', unlocked: true },
     { id: 'b2', name: 'Poupador Mestre', icon: '🏆', description: 'Economizou 20% do salário', unlocked: false },
     { id: 'b3', name: 'Planejador', icon: '📅', description: 'Criou 3 orçamentos mensais', unlocked: false },

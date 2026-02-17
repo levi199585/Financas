@@ -1,5 +1,5 @@
 
-import { Category, Transaction, TransactionType } from './types';
+import { Category, Transaction, TransactionType } from './types.ts';
 
 export const CATEGORIES: Category[] = [
   { id: 'cat_food', name: 'Alimentação', icon: '🍔', color: '#f59e0b' },
